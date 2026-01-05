@@ -1,0 +1,33 @@
+class owner():
+    def __init__(self):
+        self.name = "Balian"
+        self.contactaddress = "06123456"
+    def update(self,n,c):
+        self.name = n
+        self.contactaddress = c
+    def display(self):
+        print(self.name,self.contactaddress)
+
+class car(owner):
+    def __init__(self):
+        super().__init__()
+        self.color = "blue"
+        self.topspeed = 350
+        self.brand = "mercedes"
+        self.model = "G63"
+    def update(self,c,t,b,m):
+        self.color = c
+        self.topspeed = t
+        self.brand = b
+        self.model = m
+    def display(self):
+        print(self.brand,self.model,self.color,self.topspeed)
+
+selectedcar = car()
+selectedcar.display()
+selectedcar.update("red",350,"porsche","911")
+selectedcar.display()
+selectedowner = owner()
+selectedowner.display()
+selectedowner.update("Mehmet","0632456")
+selectedowner.display()
