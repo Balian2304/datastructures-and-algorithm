@@ -1,0 +1,49 @@
+
+"""
+def nameprint(name):
+    print(name)    
+    nameprint(name)
+
+nameprint("Balian")
+"""
+
+"""
+def nameprinting(name,number):
+    if number == 0:
+        return number
+    else:
+        nameprinting(name,number-1)
+        print(name,number)
+
+
+nameprinting("Balian",3)
+
+
+def numberlist(usernumber):
+    if usernumber == 0:
+        return usernumber
+    else:
+        numberlist(usernumber-1)
+        print(usernumber)   
+
+numberlist(25)
+
+
+sum = 0
+def numberaddition(number):
+    if number == 0:
+        return number
+    else:
+        return number + numberaddition(number-1)
+        
+print(numberaddition(5))
+"""
+
+
+def multiplication(number):
+    if number == 1:
+        return number
+    else:
+        return number * multiplication(number-1)
+    
+print(multiplication(5))
