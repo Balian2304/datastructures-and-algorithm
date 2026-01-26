@@ -1,0 +1,27 @@
+
+#linear search
+#Time complexity O(n)
+"""
+list = [3,6,8,4,5,9,2,7,1,0]
+askednumber = int(input("What number would you like to search for in the list? "))
+flag = False
+for i in range(len(list)):
+    if askednumber == list[i]:
+        flag = True
+        break
+
+if flag == True:
+    print("The number was found in the list")
+else:
+    print("The number wasn't found in the list")
+"""
+#binary search
+
+list2 = [1,2,3,4,5,6,7,8,9,10]
+first = 0
+last = 9
+middle = (last+first)//2
+
+searchednumber = int(input("What number would you like to search for in the list? "))
+
+
