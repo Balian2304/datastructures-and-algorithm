@@ -20,8 +20,20 @@ else:
 list2 = [1,2,3,4,5,6,7,8,9,10]
 first = 0
 last = 9
-middle = (last+first)//2
-
+flag = False
 searchednumber = int(input("What number would you like to search for in the list? "))
 
+while first <= last:
+    middle = (last+first)//2
+    if list2[middle] == searchednumber:
+        flag = True
+        break
+    elif searchednumber > list2[middle]:
+        first = middle + 1
+    elif searchednumber < list2[middle]:
+        last = middle - 1
 
+if flag == True:
+    print("The number was found in the list")
+else:
+    print("The number wasn't found in the list")
