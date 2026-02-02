@@ -1,0 +1,15 @@
+list = [3,1,5,2,6,9,7,10,8,4]
+#selection sort
+for i in range(0,len(list)):
+    s = list[i]
+    positions = i
+    for j in range(i+1,len(list)):
+        value = list[j]
+        if value < s:
+            s = value
+            positions = j
+    temp = list[i]
+    list[i] = s
+    list[positions] = temp
+
+print(list)
