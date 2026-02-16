@@ -1,4 +1,5 @@
 list = [3,1,5,2,6,9,7,10,8,4]
+"""
 #selection sort
 for i in range(0,len(list)):
     s = list[i]
@@ -13,3 +14,37 @@ for i in range(0,len(list)):
     list[positions] = temp
 
 print(list)
+
+#time complexity n^2
+
+
+#bubble sort
+#time complexity n^2
+
+list2 = list[::]
+for i in range(0,len(list)):
+    for j in range(0,len(list)-i-1):
+        if list2[j] > list2[j+1]:
+            temp = list2[j]
+            list2[j] = list2[j+1]
+            list2[j+1] = temp
+    print(list2)
+
+
+"""
+
+#insersion sort
+
+list3 = [6,1,5,3,4,10,2,9,7,8]
+
+for i in range(1,len(list3)):
+    key = list3[i]
+    j = i - 1
+    while j >= 0 and key < list3[j]:
+        list3[j+1] = list3[j]
+        j -= 1
+    list3[j+1] = key
+    print(list3)
+
+
+#time complexity n^2
