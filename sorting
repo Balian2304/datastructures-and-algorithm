@@ -85,3 +85,4 @@ def merge(list,start,middle,end):
 difflist = [0,6,1,2,3,7,8,4,10,9]
 mergesort(difflist,0,9)
 print(difflist)
+#time complexity n(log(in))
