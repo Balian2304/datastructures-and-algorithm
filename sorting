@@ -1,5 +1,6 @@
-list = [3,1,5,2,6,9,7,10,8,4]
+
 """
+list = [3,1,5,2,6,9,7,10,8,4]
 #selection sort
 for i in range(0,len(list)):
     s = list[i]
@@ -31,7 +32,7 @@ for i in range(0,len(list)):
     print(list2)
 
 
-"""
+
 
 #insersion sort
 
@@ -45,6 +46,42 @@ for i in range(1,len(list3)):
         j -= 1
     list3[j+1] = key
     print(list3)
-
+"""
 
 #time complexity n^2
+
+#merge sort
+
+list = [3,1,4,7,9,2,6,10,5,8]
+def mergesort(list,start,end):
+    if start < end:
+        middlepoint = (start+end)//2
+        mergesort(list,start,middlepoint)
+        mergesort(list,middlepoint+1,end)
+        merge(list,start,middlepoint,end)
+
+def merge(list,start,middle,end):
+    temp = [] 
+    l = start
+    r = middle + 1
+    while l <= middle and r <= end:
+        if list[l] < list[r]:
+            temp.append(list[l])
+            l += 1
+        else:
+            temp.append(list[r])
+            r += 1
+    while l <= middle:
+        temp.append(list[l])
+        l += 1
+    while r <= end:
+        temp.append(list[r])
+        r += 1
+    k = 0
+    for i in range(start,end + 1):
+        list[i] = temp[k]
+        k += 1
+
+difflist = [0,6,1,2,3,7,8,4,10,9]
+mergesort(difflist,0,9)
+print(difflist)
