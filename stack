@@ -1,0 +1,27 @@
+class Stack():
+    def __init__(self,maximum):
+        self.list = []
+        self.size = maximum
+    def push(self,newitem):
+        if len(self.list) < self.size:
+            self.list.append(newitem)
+        else:
+            print("Unable to add item: stack overflow")
+    def pop(self):
+        if len(self.list) > 0:
+            self.list.pop(-1)
+        else:
+            print("Unable to remove item: stack underflow")
+    def display(self):
+        for i in self.list:
+            print(i)
+    def peek(self):
+        print(self.list[-1])
+        
+
+selectedstack = Stack(10)
+for i in range (1,9):
+    selectedstack.push(i)
+selectedstack.pop()
+selectedstack.display()
+
