@@ -1,0 +1,23 @@
+openingbrackets = ["[","{","("]
+closingbrackets = ["]","}",")"]
+from stack import Stack
+
+problemsolving= Stack(10)
+problem = input("Give an expression to solve: ")
+for i in problem:
+    if i in openingbrackets:
+        problemsolving.push(i)
+    elif i in closingbrackets:
+        position = closingbrackets.index(i)
+        value = openingbrackets[position]
+        if problemsolving.peek() == value:
+            problemsolving.pop()
+        else:
+            break
+
+if len(problemsolving.list) == 0:
+    print("Brackets matched!")
+else:
+    print("Brackets didn't match!")
+
+ 
