@@ -3,6 +3,11 @@ class Tree():
         self.data = data
         self.leftchild = None
         self.rightchild = None
+    def inordersuccessor(self):
+        current = self
+        while current.leftchild != None:
+            current = current.leftchild
+        return current
     def inorder(self): 
         #left root right
         if self.leftchild != None:
@@ -41,6 +46,34 @@ class Tree():
         elif addedvalue > self.data:
            self.rightchild = self.rightchild.insert(addedvalue)
         return self
+    def delete(self,deletevalue):
+        if self == None:
+            return self
+        if deletevalue < self.data:
+            self.leftchild = self.leftchild.delete(deletevalue)
+        elif deletevalue > self.data:
+            self.rightchild = self.rightchild.delete(deletevalue)
+        else:
+            #root has only one child
+            if self.leftchild == None:
+                temp = self.rightchild
+                self = None
+                return temp
+            elif self.rightchild == None:
+                temp = self.leftchild
+                self = None
+                return temp
+            #root has 2 children
+            else:
+                temp = self.inordersuccessor()
+                t = self.data
+                self.data = temp.data
+                temp.data = t
+                self.rightchild = self.rightchild.delete(temp.data)
+        return self
+    
+
+
 objectone = Tree(50)
 objectone.leftchild = Tree(30)
 objectone.rightchild = Tree(90)
@@ -56,14 +89,16 @@ print("postorder")
 objectone.postorder()
 
 
-searchelement = int(input("Which number do you want to search? "))
+searchelement = int(input("Which number do you want to search for? "))
 result = objectone.search(searchelement)
 if result == False:
     print("Number was not found")
 else:
     print("Number is present")
 
-insertelement = int(input("Which number do you want to insert? "))
-objectone.insert(insertelement)
+#insertelement = int(input("Which number do you want to insert? "))
+#objectone.insert(insertelement)
 objectone.inorder()
-
+delitem = int(input("Which number do you want to delete? "))
+objectone.delete(delitem)
+objectone.inorder()
